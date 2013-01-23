@@ -1,0 +1,14 @@
+<ul class="charts">
+    <li ng-repeat="chart in charts">
+        <div class="name">{{ chart.name }}</div>
+        <div class="body">
+            <div google-chart chart="chart"></div>
+        </div>
+
+        <div class="controls">
+            <div class="remove">Remove chart</div>
+            <div class="edit">Edit chart</div>
+        </div>
+    </li>
+</ul>
+<br style="clear: both;"/>

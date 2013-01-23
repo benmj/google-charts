@@ -1,0 +1,84 @@
+@container-background: #e8e8e8;
+@name-background: #f8f8f8;
+@controls-background: #efefef;
+@border-color: #aeaeae;
+
+.border(@color) {
+    border: 1px solid @color;
+}
+
+.padding(@gap) {
+    margin: @gap 0px @gap 0px;
+}
+
+.decorator(@height) {
+    line-height: @height;
+    font-size: 2em;
+    font-weight: bold;
+    text-align: center;
+}
+
+body {
+   padding: 8px; 
+   font-family: Arial,Helvetica,sans-serif;
+   font-size: 12px;
+}
+
+.header {
+    background-color: @controls-background;
+   .padding(10px);
+   .border(@border-color);
+   .decorator(100px);
+}
+
+.container {
+    background-color: @container-background;
+
+   .border(@border-color);
+   .padding(5px);
+}
+
+ul.charts {
+    list-style-type: none;
+
+    li {
+        .border(@border-color);
+        background-color: white;
+        width: 608px;
+        float: left;
+        margin: 5px;
+
+        .name {
+            padding-left: 5px;
+            line-height: 20px;
+            font-size: 1.5em;
+            background-color: @name-background;
+        }
+
+        .body {
+
+        }
+
+        .controls {
+            background-color: @controls-background;
+            line-height: 20px;
+            padding: 0px 5px 0px 5px;
+
+            .remove {
+                float: left;
+            }
+
+            .edit {
+                float: right;
+            }
+        }
+    }
+}
+
+.footer {
+    background-color: @controls-background;
+
+   .border(@border-color);
+   .padding(15px);
+   .decorator(50px);
+}
