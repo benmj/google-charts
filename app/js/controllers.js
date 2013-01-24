@@ -3,6 +3,12 @@
 /* Controllers */
 
 angular.module('googleCharts.controllers', ['googleCharts.directives']).controller('indexController', function indexContoller($scope, $rootScope) {
+    $scope.removeChart = function(chartName) {
+        $scope.charts = $scope.charts.filter(function(chart) {
+            return chart.name != chartName;
+        });
+    };
+
     $scope.charts = [
        // https://code.google.com/apis/ajax/playground/?type=visualization#bar_chart
         {    
