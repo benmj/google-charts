@@ -2,7 +2,6 @@
 
 /* Directives */
 
-
 angular.module('googleCharts.directives', []).
   directive('appVersion', ['version', function(version) {
     return function(scope, elm, attrs) {
@@ -26,4 +25,12 @@ angular.module('googleCharts.directives', []).
               canvas.draw(data, scope.chart.options);
           }
         };
+  }).directive("googleTable", function() {
+    return function(scope, element, attrs) {
+      var table = new google.visualization.Table(element[0]);
+      var data = google.visualization.arrayToDataTable(scope.table.data);
+      var view = new google.visualization.DataView(data);
+
+      table.draw(view, scope.table.options);
+    };
   });
